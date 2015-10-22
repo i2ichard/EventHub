@@ -1,0 +1,412 @@
+/*====== GLOBAL =======*/
+
+html, body {
+	height: 100%;
+    margin-top: 50px;
+    background-image: url("../img/vintage_speckles.png");
+    background-size: 15%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h4, h3, h2, h1, p {
+	color: #DD656D;
+}
+
+#wrapper {
+	/*width: 100%;
+	position: absolute;
+	top: 100px;
+	z-index: 0;*/
+}
+
+#footer{
+	/*width: 100%;
+	position: absolute;
+	bottom: 0px;*/
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+nav.navbar.navbar-fixed-top {
+	background-image: url("../img/stardust.png");
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin-bottom: 0;
+}
+.icon-bar {
+	background-color: #83C4CB;
+}
+
+footer {
+	background-image: url("../img/stardust.png");
+	height: 100px;
+	width: 100%;
+	margin-top: 60px;
+	padding-top: 30px;
+}
+
+footer img {
+	width: 180px;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
+}
+
+.nav li a:hover {
+	background-color: transparent;
+	color: #83C4CB;
+}
+.nav li a:active {
+	background-color: transparent;
+	color: #83C4CB;
+}
+.nav li a:focus {
+	background-color: transparent;
+	color: #83C4CB;
+}
+
+nav.navbar.navbar-default.navbar-bottom {
+	height: 100px;
+	width: 100%;
+	background-image: url("../img/stardust.png");
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+
+/*====== HOME PAGE ========*/
+
+button {
+	background-color: #83C4CB;
+	color: #fff;
+	font-size: 1em;
+	padding: 10px 20px 10px 20px;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	margin: 0;
+}
+
+button.learn {
+	background-color: #DD656D;
+	margin-bottom: 15px;
+}
+
+.action_buttons {
+	margin-top: 50px;
+}
+
+button.action {
+	background-color: #DD656D;
+	margin-bottom: 15px;
+	width: 175px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.search {
+	margin-top: 10px;
+	line-height: 20px;
+}
+
+.col1 {
+	margin-left: 105px;
+	margin-right: -25px;
+}
+
+.thumb {
+	margin-top: 7px;
+	margin-bottom: 10px;
+	
+}
+img.thumb {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	height: 220px;
+}
+
+.pagination {
+	color: #DD656D;
+}
+
+/*====== Log In/Sign UP =======*/
+
+div.modal-body {
+	background-image: url("../img/vintage_speckles.png");
+}
+
+.modal-title {
+	font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #83C4CB;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+}
+
+.login-tab {
+	margin: 0 auto;
+	max-width: 380px;
+}
+
+.login-modal-header {
+	background-image: url("../img/stardust.png");
+	color: #fff;
+}
+
+.login-modal-header .modal-title {
+	color: #fff;
+}
+
+.login-modal-header .close {
+	color: #fff;
+}
+
+.login-modal i {
+	color: #000;
+}
+
+.login-modal form {
+	max-width: 340px;
+}
+
+.tab-pane form {
+	margin: 0 auto;
+}
+.login-modal-footer{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+/*====== EVENT INFO =======*/
+
+.breadcrumb {
+	margin-bottom: 0;
+	background-color: rgba(255, 255, 255, 0.0);
+}
+
+li a {
+	color: #DD656D;
+	font-family: 'Helvetica-Light', Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+a {
+	color: #DD656D;
+}
+li a:hover {
+	background-color: rgba(255,255,255, 0.0);
+}
+.action {
+	background-color: #DD656D;
+	color: #fff;
+}
+.banner {
+	margin-top: 30px;
+	padding: 0;
+}
+.info_banner {
+	margin-bottom: 60px;
+}
+
+.details p {
+	color: #53585F;
+}
+.details em {
+	color: #83C4CB;
+}
+img {
+	width: 100%;
+	max-height: 400px;
+}
+img#hero {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.float-right {
+	float: right;
+}
+.filters {
+	height: 500px;
+	background-color: #ddd;
+	margin-top: 30px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+div.dropdown {
+    width: 100%;
+    text-align: left;
+}
+
+.btn {
+	width: 100%;
+}
+
+.submit {
+	background-color: #83C4CB;
+	color: #fff;
+}
+
+.submit:hover {
+	background-color: #84C5CC;
+	color: #fff;
+}
+
+.events {
+	margin-left: 15px;
+	margin-top: 23px;
+}
+
+p strong {
+	color: #DD656D;
+}
+p.info {
+	font-size: 1.5em;
+	color: #53585F;
+}
+#map {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	width: 450px;
+	height: 450px;
+	background-color: #ccc;
+}
+
+/*====== CREATE AN EVENT =======*/
+.top_header {
+	padding-bottom: 4px;
+	border-bottom: 1.5px solid #53585F;
+}
+
+.move-right {
+	padding-left: 57px;
+}
+
+label {
+	font-size: 1.2em;
+	font-family: 'Roboto', sans-serif;
+	color: #DD656D;
+}
+
+em.required {
+	font-size: .8em;
+	color: #84C5CC;
+}
+
+button.form-submit {
+	border: none;
+	border-radius: 0;
+	color: #84C5CC;
+	background-color: #DD656D;
+	width: 40%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+button.disabled {
+	background-color: #DD656D;
+}
+.centered {
+	text-align: center;
+	vertical-align: center;
+	margin: auto auto;
+}
+
+.center-text {
+	text-align: center;
+}
+p.when {
+	font-size: 1.2em;
+}
+
+label.time {
+	font-size: 1em;
+	text-align: center;
+}
+
+input.when-input {
+	width: 100%;
+	text-align: center;
+}
+.eventCost {
+	width: 40%;
+}
+
+label.freeEvent {
+	color: #53585F;
+	font-size: 1em;
+}
+div.border {
+	border-radius: 5px;
+	border: 2px solid #53585F;
+	padding: 15px;
+}
+
+form.dropzone {
+	border: 1px dashed #53585F;
+	border-radius: 3px;
+}
+
+/*====== ABOUT =======*/
+.about-banner img {
+	position: relative;
+	width: 100%;
+	margin-top: -20px;
+}
+.btn-2 {
+	text-align: center;
+	margin: 0 auto;
+}
+.over {
+	position: absolute;
+	top: 250px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 2.6em;
+	color: #fff;
+}
+p.over {
+	position: absolute;
+	top: 200px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.5em;
+}
+.about-page-buttons {
+	position: absolute;
+	top: 430px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+.about-page-buttons a {
+	margin: 10px;
+}
+
+
+
+/*====== MEDIA QUERY =======*/
+
+@media (max-width: 767px) { 
+    .navbar-brand {
+        padding: 0;        
+    }
+	
+    .navbar-brand img {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .events {
+    	margin-left: 0;
+		margin-top: 23px;
+    }
+}
+

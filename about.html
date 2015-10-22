@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Styles and Themes -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="http://res.cloudinary.com/lhmjwgaqs/image/upload/v1444948985/favicon-16x16_txrzal.png" sizes="16x16" />
+
+
+	<title>EventHub</title>
+</head>
+<body>
+
+	<!-- NavBar -->
+	<nav class="navbar navbar-fixed-top" role="navigation">
+	    <div class="container">
+
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse"
+	                    data-target="#bs-example-navbar-collapse-1">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="index.php">
+	                <img class="hidden-xs" src="img/eventhub_logo.png" alt="EventHub">
+	                <img class="visible-xs" src="img/eventhub_logo.png" alt="EventHub">    
+	            </a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a class="btn btn-launch" href="register.php" data-toggle="modal" data-target="#loginModal">Sign Up or Log In</a>
+	                <li><a href="about.html">About</a></li>
+	                <li><a class="last" href="create_event.html" style="color: #83C4CB;">Create Event</a></li>
+	            </ul>
+	        </div>
+
+		</div>
+	</nav> <!-- End NavBar -->
+
+
+	<!-- -Login Modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content login-modal"></div>
+		</div>
+	</div>
+ 	<!-- - Login Model Ends Here -->
+
+	<ol class="breadcrumb">
+	  <li><a href="index.php">Home</a></li>
+	  <li><a href="#">About</a></li>
+	</ol>
+
+	<div class="container-fluid banner">
+		<div class="about-banner">
+	        <img src="http://res.cloudinary.com/lhmjwgaqs/image/upload/v1444947698/city2_xwlz3f.jpg" alt="Chicago">
+	        <h2 class="over hidden-xs">Chicago is an amazing city with countless events to part-take in. <br />Let’s get everyone involved! </h2>
+	        <p class="over hidden-sm hidden-md hidden-lg">Chicago is an amazing city with countless events to part-take in. <br />Let’s get everyone involved! </p>
+			<div class="row about-page-buttons">
+				<a href="create_event.html"><button type="button" class="action btn-2 hidden-sm hidden-xs">Create an Event</button></a>
+				<a href="index.php"><button type="button" class="action btn-2 hidden-sm hidden-xs">Browse Events</button></a>
+			</div>
+	        
+	    </div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 hidden-xl hidden-lg hidden-md">
+				<br />
+				<a href="create_event.html"><button type="button" class="action btn-2">Create an Event</button></a>
+			</div>
+			<div class="col-xs-6 hidden-xl hidden-lg hidden-md">
+				<br />
+				<a href="index.html"><button type="button" class="action btn-2">Browse Events</button></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<h2>Mission</h2>
+				<p class="info">EventHub wants to bring everyone in Chicago a little bit closer. What better way than to get all of its good citizens out to more local events? Let’s discover and part-take in the fun events that this amazing city has to offer! </p>
+			</div>
+			<div class="col-lg-offset-1 col-md-offset-1 col-lg-5 col-md-5 col-sm-12 map">
+				<h2>Contact Us</h2>
+				<p><i class="fa fa-phone-square fa-2x"></i> Phone: (312)-310-7747</p>
+				<p><i class="fa fa-envelope fa-2x"></i> Email:<a href="hello@eventhub.com"> hello@eventhub.com</a></p>
+				<p><i class="fa fa-facebook-official fa-2x"></i><a href="#"> Facebook/eventhub</a></p>
+				<p><i class="fa fa-instagram fa-2x"></i><a href="#"> Instagram/eventhub</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-3 col-xs-offset-3 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				<img src="img/eventhub_logo.png" class="footer_logo" alt="">
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+	$(document).ready(function(){
+		$(document).on('click','.signup-tab',function(e){
+			e.preventDefault();
+		    $('#signup-taba').tab('show');
+		});	
+		
+		$(document).on('click','.signin-tab',function(e){
+		   	e.preventDefault();
+		    $('#signin-taba').tab('show');
+		});
+		    	
+	});	
+	</script>
+
+</body>
+</html>

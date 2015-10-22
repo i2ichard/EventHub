@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Styles and Themes -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/dropzone.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<!-- JS -->
+	<script src="js/dropzone.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="http://res.cloudinary.com/lhmjwgaqs/image/upload/v1444948985/favicon-16x16_txrzal.png" sizes="16x16" />
+
+
+	<title>Create an Event</title>
+	<style>
+	#modal {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+	}
+	.modalconent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 80%;
+    padding: 20px;
+	}
+	.modalcontent h3{
+		text-align: center;
+	}
+	.modalcontent p {
+		text-align: center;
+	}
+	</style>
+
+	<script>
+	window.onload = function () {
+	    document.getElementById('button').onclick = function () {
+	        document.getElementById('modal').style.display = "none"
+	    };
+	};
+	</script>
+</head>
+<body>
+	<div id="modal">
+	    <div class="modalconent">
+	         <h3>Please log in or sign up to create an event</h3>
+
+	        <p>It's easy!</p>
+	        <button id="button">Close</button>
+	    </div>
+	</div>
+	<!-- NavBar -->
+	<nav class="navbar navbar-fixed-top" role="navigation">
+	    <div class="container">
+
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse"
+	                    data-target="#bs-example-navbar-collapse-1">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="index.php">
+	                <img class="hidden-xs" src="img/eventhub_logo.png" alt="EventHub">
+	                <img class="visible-xs" src="img/eventhub_logo.png" alt="EventHub">    
+	            </a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a class="btn btn-launch" href="register.php" data-toggle="modal" data-target="#loginModal">Sign Up or Log In</a>
+	                <li><a href="about.html">About</a></li>
+	                <li><a class="last" href="create_event.html" style="color: #83C4CB;">Create Event</a></li>
+	            </ul>
+	        </div>
+
+		</div>
+	</nav> <!-- End NavBar -->
+
+
+	<!-- -Login Modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content login-modal"></div>
+		</div>
+	</div>
+ 	<!-- - Login Model Ends Here -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="top_header">Create An Event</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 move-right">
+				<form>
+
+					<div class="form-group">
+				    	<label for="eventName">Event Name <em class="required">(required)</em></label>
+				    	<input type="text" class="form-control" id="eventName" placeholder="What would you like to call your event?">
+				  	</div>
+					<br>
+				  	<div class="form-group">
+					    <label for="eventLoc">Where <em class="required">(required)</em></label>
+					    <input type="text" class="form-control" id="eventLoc" placeholder="Type an address or a venue">
+				 	</div>
+				  	<br>
+				  	<div>
+				  		<p class="when">When <em class="required">(required)</em></p>
+				 	</div>
+				  	
+				  	<div class="row">
+					  	<div class="col-md-2">
+					  		<div class="form-group center-text">
+							    <label for="eventTime" class="time">Start Date</label>
+							    <input type="text" class="form-control when-input" id="eventTime" placeholder="mm/dd/yyyy">
+							</div>
+				  		</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group center-text">
+							    <label for="eventTime" class="time">Start Time</label>
+							    <input type="text" class="form-control when-input" id="eventTime" placeholder="9:00am">
+							</div>
+					  	</div>
+
+					  	<div class="col-md-offset-1 col-md-2">
+					  		<div class="form-group center-text">
+							    <label for="eventTime" class="time">End Date</label>
+							    <input type="text" class="form-control when-input" id="eventTime" placeholder="mm/dd/yyyy">
+							</div>
+					  	</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group center-text">
+							    <label for="eventTime" class="time">End Time</label>
+							    <input type="text" class="form-control when-input" id="eventTime" placeholder="9:00am">
+							</div>
+					  	</div>
+				 	</div>
+					
+					<br>
+					<div class="form-group">
+					    <label for="eventLoc">Event Description <em class="required">(required)</em></label>
+					    <textarea class="form-control" rows="8" placeholder="Let people know what the event is about"></textarea>
+				 	</div>
+					<br>
+				 	<div class="form-group">
+					    <label for="eventCost">Event Admission <em class="required">(required)</em></label>
+					    <input type="text" class="form-control eventCost" id="eventCost" placeholder="How much will it cost to attend this event?">
+				 	</div>
+
+				 	<div class="checkbox">
+						<label class="freeEvent">
+					    <input type="checkbox" value="free">
+					    This is a FREE event.
+					  	</label>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+							    <label for="eventCat">Event Category <em class="required">(required)</em></label>
+							    <select class="form-control">
+							    	<option>Please select an event category</option>
+									<option>Festival</option>
+								 	<option>Fair</option>
+								  	<option>Public</option>
+								  	<option>Networking</option>
+								  	<option>Sports</option>
+								  	<option>Arts</option>
+								  	<option>Seminar</option>
+								  	<option>Party</option>
+								  	<option>Expo</option>
+								  	<option>Conference</option>
+								  	<option>Tournament</option>
+								  	<option>Other</option>
+								</select>
+						 	</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="form-group">
+							    <label for="eventOrg">Organizer's Name <em class="required">(required)</em></label>
+							    <input type="text" class="form-control" id="eventOrg" placeholder="Who’s setting up this event?">
+						 	</div>
+						</div>
+					</div>
+					<br>
+
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+							    <label for="eventPage">Event Official Page</label>
+							    <input type="text" class="form-control" id="eventOrg" placeholder="URL of the event’s official page">
+						 	</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="form-group">
+							    <label for="eventPage">Organizer's Email <em class="required">(required)</em></label>
+							    <input type="email" class="form-control" id="orgEmail" placeholder="What’s the organizer’s email address?">
+						 	</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+							    <label for="eventPage">Event Ticket Purchasing Page</label>
+							    <input type="text" class="form-control" id="eventOrg" placeholder="URL to purchase tickets">
+						 	</div>
+						</div>
+					</div>
+					<br>
+				</form>
+				<div class="row">
+
+					<div class="col-md-5">
+						<p style="text-align: center">Event Banner</p>
+						<div class="border">
+							<form action="/file-upload" class="dropzone" id="my-awesome-dropzone">
+							
+							</form>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<p style="text-align: center">Event Thumbnail</p>
+						<div class="border">
+							<form action="/file-upload" class="dropzone" id="my-awesome-dropzone">
+							
+							</form>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<button type="submit" class="btn btn-default disabled form-submit">Publish This Event</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-3 col-xs-offset-3 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				<img src="img/eventhub_logo.png" class="footer_logo" alt="">
+			</div>
+		</div>
+	</footer>
+
+	<script>
+	$(document).ready(function(){
+		$(document).on('click','.signup-tab',function(e){
+			e.preventDefault();
+		    $('#signup-taba').tab('show');
+		});	
+		
+		$(document).on('click','.signin-tab',function(e){
+		   	e.preventDefault();
+		    $('#signin-taba').tab('show');
+		});
+		    	
+	});	
+	</script>
+
+</body>
+</html>

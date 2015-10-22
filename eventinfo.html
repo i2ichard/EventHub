@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Styles and Themes -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<title>EventHub</title>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    	var marker;
+
+		function initMap() {
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 15,
+		    center: {lat: 41.877185, lng: -87.618892}
+		  });
+
+		  marker = new google.maps.Marker({
+		    map: map,
+		    draggable: true,
+		    animation: google.maps.Animation.DROP,
+		    position: {lat: 41.8771, lng: -87.6188}
+		  });
+		  marker.addListener('click', toggleBounce);
+		}
+
+		function toggleBounce() {
+		  if (marker.getAnimation() !== null) {
+		    marker.setAnimation(null);
+		  } else {
+		    marker.setAnimation(google.maps.Animation.BOUNCE);
+		  }
+		}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj2oEabzFYdkkloLW8sQhPJ6yxhaQ-bzE&callback=initMap"></script>
+</head>
+<body>
+
+	<!-- NavBar -->
+	<nav class="navbar navbar-fixed-top" role="navigation">
+	    <div class="container">
+
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse"
+	                data-target="#bs-example-navbar-collapse-1">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="index.html">
+	                <img class="hidden-xs" src="img/eventhub_logo.png" alt="EventHub">
+	                <img class="visible-xs" src="img/eventhub_logo.png" alt="EventHub">    
+	            </a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a class="btn btn-launch" href="javascript:;" data-toggle="modal" data-target="#loginModal">Sign Up</a>
+	                <li><a class="btn btn-launch" href="javascript:;" data-toggle="modal" data-target="#loginModal">Log In</a>
+	                <li><a href="about.html">About</a></li>
+	                <li><a href="create_event.html" style="color: #83C4CB;">Create Event</a></li>
+	                <!-- <li><a href="#"><button type="button" class="">Create Event</button></a></li> -->
+	            </ul>
+	        </div>
+
+		</div>
+	</nav> <!-- End NavBar -->
+
+	<!-- -Login Modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content login-modal">
+	      		<div class="modal-header login-modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title text-center" id="loginModalLabel">EventHub Users</h4>
+	      		</div>
+	      		<div class="modal-body">
+	      			<div class="text-center">
+		      			<div role="tabpanel" class="login-tab">
+						  	<!-- Nav tabs -->
+						  	<ul class="nav nav-tabs" role="tablist">
+						    	<li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Log In</a></li>
+						    	<li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
+						  	</ul>
+						
+						  	<!-- Tab panes -->
+						 	<div class="tab-content">
+						    	<div role="tabpanel" class="tab-pane active text-center" id="home">
+						    		&nbsp;&nbsp;
+						    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
+						    		<div class="clearfix"></div>
+						    		<form>
+										<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+									      		<input type="text" class="form-control" id="login_username" placeholder="Username">
+									    	</div>
+									    	<span class="help-block has-error" id="email-error"></span>
+									  	</div>
+									  	<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+									      		<input type="password" class="form-control" id="password" placeholder="Password">
+									    	</div>
+									    	<span class="help-block has-error" id="password-error"></span>
+									  	</div>
+							  			<button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Log in</button>
+							  			<div class="clearfix"></div>
+							  			<div class="login-modal-footer">
+							  				<div class="row">
+												
+											</div>
+							  			</div>
+									</form>
+						    	</div>
+						    	<div role="tabpanel" class="tab-pane" id="profile">
+						    	    &nbsp;&nbsp;
+						    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
+						    		<div class="clearfix"></div>
+						    		<form>
+										<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+									      		<input type="text" class="form-control" id="username" placeholder="Username">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="username-error"></span>
+									  	</div>
+									  	<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+									      		<input type="text" class="form-control" id="remail" placeholder="Email">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
+									  	</div>
+									  	<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+									      		<input type="text" class="form-control" id="password" placeholder="Password">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="username-error"></span>
+									  	</div>
+							  			<button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
+										<div class="clearfix"></div>
+										<div class="login-modal-footer">
+							  				<div class="row">
+											</div>
+							  			</div>
+									</form>
+						    	</div>
+						    	<div role="tabpanel" class="tab-pane text-center" id="forget_password">
+						    		&nbsp;&nbsp;
+						    	    <span id="reset_fail" class="response_error" style="display: none;"></span>
+							    		<div class="clearfix"></div>
+							    		
+							    	</div>
+							  	</div>
+							</div>
+		      				
+		      			</div>
+		      		</div>
+		      		
+		    	</div>
+		   </div>
+	 	</div>
+ 	<!-- - Login Model Ends Here -->
+
+	<ol class="breadcrumb">
+	  <li><a href="javascript:history.back()">Home</a></li>
+	  <li><a href="#">Lollapalooza</a></li>
+	</ol>
+
+	<div class="container-fluid banner info_banner">
+		<div class="item">
+	        <img src="img/event_imgs/lolla.jpg" alt="Lollapalooza">
+	    </div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<img src="img/event_imgs/lolla-logo.png" alt="Lolla Logo">
+				<p class="info"><strong>Lollapalooza</strong> is an annual music festival featuring popular alternative rock, heavy metal, punk rock, hip hop and EDM bands and artists, dance and comedy performances and craft booths. It has also provided a platform for non-profit and political groups and various visual artists.</p>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 details">
+						<h2>Details</h2>
+						<p>Time: 9am - 9pm</p><br>
+						<p>Location: Grant Park</p><br>
+						<p>Price of Admission: $$$</p><br>
+						<p><a href="http://www.lollapalooza.com/" target="_blank"><em>Official Page of Event</em></a></p>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 action_buttons">
+						<a href="#"><button type="button" class="action">Share Event</button></a><br>
+						<a href="http://www.lollapalooza.com/tickets/" target="_blank"><button type="button" class="action">Buy Tickets</button></a><br>
+						<a href="#"><button type="button" class="action">Contact Organizer</button></a><br>
+					</div>
+				</div>
+
+			</div>
+			<div id="map" class="col-lg-offset-1 col-md-offset-1 col-lg-5 col-md-5 col-sm-12 map">
+				<!-- <img src="img/event_imgs/grant_map.png" alt="Map"> -->
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-xs-offset-5 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				<img src="img/eventhub_logo.png" class="footer_logo" alt="">
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+	$(document).ready(function(){
+		$(document).on('click','.signup-tab',function(e){
+			e.preventDefault();
+		    $('#signup-taba').tab('show');
+		});	
+		
+		$(document).on('click','.signin-tab',function(e){
+		   	e.preventDefault();
+		    $('#signin-taba').tab('show');
+		});
+		    	
+	});	
+	</script>
+
+</body>
+</html>
